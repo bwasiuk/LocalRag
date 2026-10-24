@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: Local RAG
+  datasource:
+    url: jdbc:postgresql://localhost:5432/rag_demo
+    username: postgres
+    password: postgres
+  ai:
+    ollama:
+      base-url: http://localhost:11434
+      chat:
+        model: qwen2.5:7b
+      embedding:
+        model: nomic-embed-text
+    vectorstore:
+      pgvector:
+        initialize-schema: true
+  liquibase:
+    enabled: false
+
